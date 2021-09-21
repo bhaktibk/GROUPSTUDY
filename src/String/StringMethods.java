@@ -1,14 +1,7 @@
  /*   
-5) int lastIndexOf(char ch) [done]
-6) String toLowerCase() [done]
-7) String toUpperCase() [done]
-8) replace() [done]
-9) split [done]
-10) replaceAll [done] //  facility to use regx 
-11) length [done]
-12) substring [done]
-13) compareTo [done]// frist mismatch  match ASCII value compaire
-14) trim [done]
+
+
+
 15) startsWith [done]  //String compare
 16) endsWith [done]   //String ends 
 17) contains [done] // Provided String/Ch is available 
@@ -22,6 +15,7 @@
 
 package String;
 
+import java.util.Arrays;
 import java.util.concurrent.SynchronousQueue;
 
 public class StringMethods {
@@ -34,7 +28,7 @@ public class StringMethods {
 		System.out.println(ch);		
 	
 	}
-	//2) String valueOf(int num) : Overloaded method [done]// get conevreted intoString 
+	//2) String valueOf(anyDT value) : Overloaded method [done]// get conevreted intoString 
 	
 	static void valueOf() {
 		char ch='e';
@@ -43,7 +37,7 @@ public class StringMethods {
 		
 		String str = String.valueOf("hsgfhsvfhsfd");
 		String str2= s.valueOf("this is on revriablename");// this is also possible 
-		
+		// also we can use concat to convert into string e.g. String = ch+""; 
 		System.out.println(str);
 		System.out.println(str2);
 		String num="12e";
@@ -60,12 +54,107 @@ public class StringMethods {
 		System.out.println(s.equals("This"));
 	}
 	
-	//4) int indexOf(char ch) [done]//
+	//4) int indexOf(char ch) 
+	static void indexOf() {
+		String str= "H*el*lo gm";
+		System.out.println(str.indexOf('l'));//2
+		System.out.println(str.indexOf(1));//-1
+		System.out.println(str.indexOf('z'));
+		System.out.println(str.indexOf('*'));
+		System.out.println(str.indexOf(' '));
+		
+	}
+	//5) int lastIndexOf(char ch) [done]
+	static void lastIndexOf() {
+		String str= " Good*Morni*ng";
+		System.out.println(str.lastIndexOf('o'));
+		System.out.println(str.lastIndexOf('z'));
+		System.out.println(str.lastIndexOf(' '));
+	}
+	//6) String toLowerCase() [done]
+	static void toLowerCase() {
+		String str= "GOOD MONRING";
+		System.out.println(str.toLowerCase());
+	}
+	
+	//7) String toUpperCase() [done]
+	static void toUpperCase() {
+		String str="Go2od Mor4ning";
+		String str1="234234&&";
+		System.out.println(str.toUpperCase());
+		System.out.println(str1.toUpperCase());
+	}
+	
+	//8) replace() overloaded method of "String" , ch...class, DO NOT accept Regex
+	final static void replace() {
+		String str= "Good monring all lets statr class at 5 pm";
+		System.out.println(str.replace(" ",""));
+		System.out.println(str.replace("Good", "best"));
+		System.out.println(str.replace('o', '@'));
+	}
+		
+	//9 replace first, can accept string, char, regex 
+	static void replaceFirst() {
+		String str= "Good  monring  all alllets statr class at 5 pm";
+		//System.out.println(str.replaceFirst("all", "1"));
+		
+		System.out.println(str.replaceFirst("\\s+", " "));// to remove extra spaces 
+	}
+	// 10. replace ALL : string, char , regext 
+	static void replaceAll() {
+		String str= "  Good  monring         all alllets           statr class at 5 pm";
+		System.out.println(str.replaceAll("\\s+", "1"));
+		System.out.println(str.replaceAll("\\s+", " "));//to have only single space 
+	}
+	
+	
+	//11) split gets store in array 
+	static void split() {
+		String str="we/are/bright";
+		String arry[]= str.split("/");
+		String num="10 20 30";
+		String[] arry1= num.split(" ");
+		System.out.println(Arrays.toString(arry));
+		System.out.println(Arrays.toString(arry1));
+		
+	}
+	//11) length 
+	static void length() {
+		String str="we/are/bright";
+		String str2="";
+		System.out.println(str2.length());
+	}
+	//12) substring : overloaded  , either starindex  or start and end both 
+	static void substring() {
+		String str="we/are/bright";
+		String str2="";
+		System.out.println(str.substring(1));
+		//System.out.println(str.substring(-1));// rund time error string indexout of bond
+		System.out.println(str.substring(1,4));//1 including, 4 excluding 
+		System.out.println("hi");
+	}
+	
+	//13) compareTo  first mismatch  match ASCII value compaire
+	static void compareTo() {
+		
+	}
+	
+	//14) trim [done]
 	
 	public static void main(String[] args) {
 		//charAt();
 		//valueOf();
-		equals();
+		//equals();
+		//indexOf();
+		//lastIndexOf();
+		//toLowerCase();
+		//toUpperCase();
+		//replace();
+		//replaceFirst();
+		//replaceAll();
+		//split();
+		//length();
+		substring();
 	}
 
 }
