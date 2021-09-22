@@ -1,16 +1,12 @@
  /*   
-
-
-
-15) startsWith [done]  //String compare
-16) endsWith [done]   //String ends 
-17) contains [done] // Provided String/Ch is available 
-18) String intern - done   // to pull into COnstance pull
-19) boolean isEmpty [done]  //
-20) String replaceFirst - [done] //
-21) char[] toCharArray() - [done] //
-22) boolean equalsIgnoreCase(String str) [done]
-23) String toString() -> [done]*/
+15) startsWith   
+16) endsWith    
+17) contains    
+18) String intern - 
+19) boolean isEmpty  
+21) char[] toCharArray() 
+23) String toString()
+*/
 
 
 package String;
@@ -75,6 +71,7 @@ public class StringMethods {
 	static void toLowerCase() {
 		String str= "GOOD MONRING";
 		System.out.println(str.toLowerCase());
+		
 	}
 	
 	//7) String toUpperCase() [done]
@@ -108,14 +105,14 @@ public class StringMethods {
 	}
 	
 	
-	//11) split gets store in array 
+	//11) split gets store in array   .. parameter STRINGONLY
 	static void split() {
-		String str="we/are/bright";
-		String arry[]= str.split("/");
+		String str="we are bright are future ";
+		String arry[]= str.split("a");
 		String num="10 20 30";
 		String[] arry1= num.split(" ");
 		System.out.println(Arrays.toString(arry));
-		System.out.println(Arrays.toString(arry1));
+		//System.out.println(Arrays.toString(arry1));
 		
 	}
 	//11) length 
@@ -136,10 +133,28 @@ public class StringMethods {
 	
 	//13) compareTo  first mismatch  match ASCII value compaire
 	static void compareTo() {
+		int x= 'm';
+		int x1=' ';
+		int xx= 'M';
+		System.out.println("m->" +x+"  M->"+xx+  "  space-->"+x1);
+		
+		String str1= "Good morning";
+		String str4= "Good morning";
+		String str2= "Good MoArning";
+		String str3= "";
+		System.out.println(str1.compareTo(str2));// m- M..  109-77= 32
+		System.out.println(str2.compareTo(str1));// M-m = -32
+		System.out.println(str2.compareTo(str3)); //  Str2 length will be print as there is nothing is second string
+		System.out.println(str3.compareTo(str2));
+		System.out.println(str1.compareTo(str4));
+		if(str1.compareTo(str2)==0)
+			System.out.println("Identical");
+		else
+			System.out.println("Unidentical");
 		
 	}
 	
-	//14) trim [done]
+	//14) trim 
 	
 	public static void main(String[] args) {
 		//charAt();
@@ -154,7 +169,9 @@ public class StringMethods {
 		//replaceAll();
 		//split();
 		//length();
-		substring();
+		//substring();
+		compareTo();
+		
 	}
 
 }

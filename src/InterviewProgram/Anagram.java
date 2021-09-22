@@ -22,6 +22,7 @@ public class Anagram {
 			System.out.println("Not anagram");
 		
 	}
+	
 
 	public static void main(String[] args) {
 		Anagram a= new Anagram();
