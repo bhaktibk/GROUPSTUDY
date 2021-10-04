@@ -43,8 +43,27 @@ Programs
 	input1 = [2,5,6,8]
 	input2 = [6,2,8,5]
 	Output : input2 = [2,5,6,8]
+	Q20
+ For Q20: You need to check what is index of 2 in first array and which ever
+ index you get, on that index you need to update current loop value.
+
+ Just Example
+ 	Step 1: Find what is index of 8 in a array
+ 	Step 2: once u get that index where 8 is place
+ 	Step 3: a array current value will be assigned to b array index which you get from 2nd step. 
+
 
 21. :To print number of words in a string
 	Input: "TechnoCreditsProgramming"
 	Output :3
 22. Write a program to add 0 after every ‘5’ in the int array for e.g.  {4, 6, 5, 7, 9, 5, 8,5,1}
+
+Q22
+  Step1: Find out the occurrence of 5's in array
+  Step2: create new array with cnt of 5's + a.length
+  Step3: create new int counterIndex.
+  Step4: if current index element have value 5 then 
+  		  on new array you can update value in output
+  		  array and also add 0 after it.
+  		  out[indexCounter++] = 5;
+ 		  out[indexCounter++] = 0; rest as it is.
