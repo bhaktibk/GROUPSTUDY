@@ -6,7 +6,7 @@ package InterviewProgram;
 
 import java.util.Arrays;
 
-public class MoveAllZeroAtEnd {
+public class MoveZeroinArray {
 	//method1:  zero to move at end
 	void moveAllZeroAtEnd(int[] input) {
 		 
@@ -22,17 +22,28 @@ public class MoveAllZeroAtEnd {
 	}
 	//to move zero at start
 	
-	void tomoveZeroAtStart(String input[]) {
-		
-		
-		
+	void tomoveZeroAtStart(int input[]) {
+		int output[]= new int [input.length];
+		int count=0;
+		for (int i=0; i< input.length; i++) {
+			if (input[i]==0)
+				count++;
+		}
+		for (int i=0; i <input.length; i++) {
+			if (input[i]!=0) {
+				output[count]=input[i];
+				count++;
+			}	
+		}
+		System.out.println(Arrays.toString(output));
 	}
 	//
 	
 	
 	public static void main (String[] hjhj) {
-		int a[] = {5,0,3,6,9,5,0,6,0,3,6};
-		MoveAllZeroAtEnd p= new MoveAllZeroAtEnd();
+		int a[] = {5,0,3,-6,9,5,0,6,0,3,6};
+		MoveZeroinArray p= new MoveZeroinArray();
 		p.moveAllZeroAtEnd(a);
+		p.tomoveZeroAtStart(a);
 	}
 }

@@ -1,7 +1,5 @@
  /*   
-15) startsWith   
-16) endsWith    
-17) contains    
+  
 18) String intern - 
 19) boolean isEmpty  
 21) char[] toCharArray() 
@@ -50,20 +48,23 @@ public class StringMethods {
 		System.out.println(s.equals("This"));
 	}
 	
-	//4) int indexOf(char ch) 
+	//4) int indexOf(char ch)  //overloaded 
 	static void indexOf() {
-		String str= "H*el*lo gm";
+		String str= "eeH*el*lo gm";
+		
+		System.out.println(str.indexOf('e', 2));
 		System.out.println(str.indexOf('l'));//2
 		System.out.println(str.indexOf(1));//-1
 		System.out.println(str.indexOf('z'));
 		System.out.println(str.indexOf('*'));
-		System.out.println(str.indexOf(' '));
+		System.out.println("new1: "+str.indexOf("gm"));
 		
 	}
-	//5) int lastIndexOf(char ch) [done]
-	static void lastIndexOf() {
-		String str= " Good*Morni*ng";
-		System.out.println(str.lastIndexOf('o'));
+	//5) int lastIndexOf(char ch)//overloaded method 
+		static void lastIndexOf() {
+		String str= " GnGood*MorGNni*ng";
+		
+		System.out.println("new "+str.lastIndexOf("GN"));
 		System.out.println(str.lastIndexOf('z'));
 		System.out.println(str.lastIndexOf(' '));
 	}
@@ -100,7 +101,7 @@ public class StringMethods {
 	// 10. replace ALL : string, char , regext 
 	static void replaceAll() {
 		String str= "  Good  monring         all alllets           statr class at 5 pm";
-		System.out.println(str.replaceAll("\\s+", "1"));
+		System.out.println(str.replaceAll("\\s+", " "));
 		System.out.println(str.replaceAll("\\s+", " "));//to have only single space 
 	}
 	
@@ -156,6 +157,24 @@ public class StringMethods {
 	
 	//14) trim 
 	
+	//15) stratwith //overloaded method 
+	static void startsWith  () {
+		String str= "bhabhkri";
+		
+		System.out.println(str.startsWith("bh", 3));
+	}
+	//16) endswith 
+		static void endsWith  () {
+			String str= "bhabhkri";
+			System.out.println(str.endsWith("kri"));
+		}
+		//17) contains
+		static void contains() {
+			String str= "hhgghgh";
+			System.out.println(str.contains(""));
+		}
+		
+		
 	public static void main(String[] args) {
 		//charAt();
 		//valueOf();
@@ -170,8 +189,25 @@ public class StringMethods {
 		//split();
 		//length();
 		//substring();
-		compareTo();
+		//compareTo();
+		startsWith();
+		//endsWith();
+		//contains();
 		
+		char ch='c';
+		System.out.println(Character.isAlphabetic(ch));
+		System.out.println(Character.isDigit(ch));
+		Character.toLowerCase(ch);
+		Character.toUpperCase(ch);
+		String b= "Bhakti";
+		StringBuffer sb= new StringBuffer(b);
+		sb.reverse();
+		b= sb.toString();
+		System.out.println(b);
+
 	}
+	 
+	   
+	  
 
 }
